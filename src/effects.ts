@@ -1,4 +1,4 @@
-import * as fx from 'pstfx'
+import * as fx from 'vctrfx'
 import type { EffectMeta } from './types'
 
 const kebab = (name: string): string => name.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()

@@ -1,4 +1,4 @@
-import type { Effect, OutputFormat } from 'pstfx'
+import type { Effect, OutputFormat } from 'vctrfx'
 
 export interface EffectMeta {
   readonly create: (options: Record<string, unknown>) => Effect

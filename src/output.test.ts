@@ -41,14 +41,14 @@ describe('destination', () => {
 
 describe('write', () => {
   it('creates missing directories', () => {
-    const root = mkdtempSync(join(tmpdir(), 'pstfx-'))
+    const root = mkdtempSync(join(tmpdir(), 'vctrfx-'))
     const target = join(root, 'nested', 'deep', 'out.svg')
     write(target, '<svg id="x"/>')
     expect(readFileSync(target, 'utf8')).toBe('<svg id="x"/>')
   })
 
   it('overwrites an existing file', () => {
-    const root = mkdtempSync(join(tmpdir(), 'pstfx-'))
+    const root = mkdtempSync(join(tmpdir(), 'vctrfx-'))
     mkdirSync(join(root, 'a'))
     const target = join(root, 'a', 'out.svg')
     write(target, 'first')

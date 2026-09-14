@@ -1,6 +1,6 @@
 import { camelKey, canonical, choicesFor, normalizeKeys, resolve } from './effects'
 import type { EffectMeta, EffectSpec } from './types'
-import type { Effect } from 'pstfx'
+import type { Effect } from 'vctrfx'
 
 const coerce = (raw: string): unknown => {
   const value = raw.trim()
@@ -94,7 +94,7 @@ export const parseSpec = (raw: string): EffectSpec => {
   const body = separator === -1 ? '' : raw.slice(separator + 1)
 
   const meta = resolve(name)
-  if (meta === null) throw new Error(`Unknown effect "${name}". Run \`pstfx list\` to see everything available.`)
+  if (meta === null) throw new Error(`Unknown effect "${name}". Run \`vctrfx list\` to see everything available.`)
 
   const options = body
     .split(',')

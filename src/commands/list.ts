@@ -1,3 +1,4 @@
+import { PRESET_NAMES } from 'grfti'
 import { EFFECTS, PRESETS } from '../effects'
 import type { EffectMeta } from '../types'
 
@@ -29,13 +30,21 @@ export const listCommand = (): void => {
     '',
     'Options go after a colon, comma separated:',
     '',
-    '  pstfx logo.svg -e "bloom:radius=8,threshold=0.5"',
-    '  pstfx logo.svg -e halftone:size=5,angle=15 -e "grain:amount=0.3"',
+    '  vctrfx logo.svg -e "bloom:radius=8,threshold=0.5"',
+    '  vctrfx logo.svg -e halftone:size=5,angle=15 -e "grain:amount=0.3"',
     '',
     'Presets are stacks of effects. Reach inside one with a dot:',
     '',
-    '  pstfx logo.svg -p "film:grain.amount=0.5"',
-    '  pstfx logo.svg -p "crt:scanlines.gap=6,vignette.amount=0.9"',
+    '  vctrfx logo.svg -p "film:grain.amount=0.5"',
+    '  vctrfx logo.svg -p "crt:scanlines.gap=6,vignette.amount=0.9"',
+    '',
+    'Colour options take any grfti colour: a CSS name, hex, rgb(), hsl(), oklch():',
+    '',
+    '  vctrfx logo.svg -e "glow:color=rebeccapurple"',
+    '  vctrfx logo.svg -e "tint:color=oklch(0.7 0.15 250),amount=0.4"',
+    '  vctrfx logo.svg -e "duotone:shadow=midnightblue,highlight=hotpink"',
+    '',
+    `Gradient preset names usable as colour pairs (${PRESET_NAMES.length}): ${PRESET_NAMES.join(', ')}`,
     '',
   ]
   console.log(lines.join('\n'))

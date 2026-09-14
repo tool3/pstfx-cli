@@ -9,7 +9,7 @@ import type { CliOptions } from './types'
 
 const createParser = () =>
   yargs(hideBin(process.argv))
-    .scriptName('pstfx')
+    .scriptName('vctrfx')
     .usage('Usage: $0 [input...] [options]')
     .example('$0 logo.svg -e bloom', 'Apply one effect, print to stdout')
     .example('$0 logo.svg -p crt -o out.svg', 'Apply a preset, write to a file')
